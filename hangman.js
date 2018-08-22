@@ -6,11 +6,15 @@ const Hangman = function (word, remainingGuesses) {
 }
 
 Hangman.prototype.calculateStatus = function () {
-  const lettersUnguessed = this.word.filter((letter) => {
-    return !this.guessedLetters.includes(letter)
+  const finished = this.word.every((letter) => {
+    return this.guessedLetters.includes(letter)
   })
 
-  const finished = lettersUnguessed.length === 0
+  // const lettersUnguessed = this.word.filter((letter) => {
+  //   return !this.guessedLetters.includes(letter)
+  // })
+
+  // const finished = lettersUnguessed.length === 0
 
   // let finished = true
 
