@@ -36,6 +36,10 @@ Hangman.prototype.makeGuess = function (guess) {
   const isUnique = !this.guessedLetters.includes(guess)
   const isBadGuess = !this.word.includes(guess)
 
+  if (this.status !== 'playing') {
+    return
+  }
+
   if (isUnique) {
     this.guessedLetters.push(guess)
   }
