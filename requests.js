@@ -3,8 +3,8 @@ const getPuzzle = async (wordCount) => {
 
   if (response.status === 200) {
     const data = await response.json()
-    return data
-    // return data.puzzle
+    // return data
+    return data.puzzle
   } else {
     throw new Error('Unable to fetch new puzzle')
   }
